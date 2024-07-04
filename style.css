@@ -13,13 +13,19 @@ header {
 }
 
 header h1 {
-    font-size: 3em;
+    font-size: 4em;
     color: #add8e6;
+    margin: 0;
+}
+
+nav {
+    margin-top: 20px;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
@@ -30,7 +36,7 @@ nav ul li {
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 nav ul li a:hover {
