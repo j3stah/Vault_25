@@ -1,10 +1,10 @@
 body {
     font-family: serif;
-    color: #ddd;
+    color: #fff; /* White text for better contrast */
     margin: 0;
     padding: 0;
     line-height: 1.5;
-    background-color: #222;
+    background-color: #2e8b57; /* Green background color */
   }
   
   a {
@@ -13,7 +13,7 @@ body {
   }
   
   a:hover {
-    color: #eee;
+    color: #a7e9c0; /* Lighter green for hover */
   }
   
   header {
@@ -29,7 +29,7 @@ body {
   }
   
   nav {
-    background-color: #333;
+    background-color: #39b57a; /* Darker green for navigation bar */
     padding: 10px;
   }
   
@@ -47,7 +47,7 @@ body {
   
   main {
     padding: 20px;
-    color: #ddd;
+    color: #fff; /* White text for better contrast */
   }
   
   section {
@@ -56,7 +56,7 @@ body {
   
   h2 {
     margin-bottom: 10px;
-    color: #eee;
+    color: #fff; /* White text for better contrast */
   }
   
   .featured-poem p {
@@ -66,7 +66,7 @@ body {
   footer {
     text-align: center;
     padding: 10px;
-    background-color: #333;
-    color: #ddd;
+    background-color: #39b57a; /* Darker green for footer */
+    color: #fff; /* White text for better contrast */
   }
   
