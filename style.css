@@ -1,34 +1,20 @@
 body {
-    font-family: serif;
-    color: #fff; /* White text for better contrast */
+    font-family: "Roboto Slab", serif; /* Assuming you're using a green theme */
+    color: #fff;
     margin: 0;
     padding: 0;
     line-height: 1.5;
-    background-color: #2e8b57; /* Green background color */
-  }
-  
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: #a7e9c0; /* Lighter green for hover */
-  }
-  
-  header {
-    padding: 20px;
   }
   
   h1 {
-    margin: 0;
-  }
-  
-  .centered-title {
+    font-family: Merriweather, serif; /* Similar font to Arsenal SC */
+    font-weight: bold;
+    font-style: normal;
     text-align: center;
   }
   
-  nav {
+  .nav { /* Changed selector to avoid conflicts with standard nav tag */
+    font-family: "Open Sans", sans-serif;
     background-color: #39b57a; /* Darker green for navigation bar */
     padding: 10px;
   }
@@ -45,13 +31,17 @@ body {
     display: inline-block;
   }
   
-  main {
-    padding: 20px;
-    color: #fff; /* White text for better contrast */
+  a {
+    color: inherit;
+    text-decoration: none;
   }
   
-  section {
-    margin-bottom: 20px;
+  a:hover {
+    color: #a7e9c0; /* Lighter green for hover */
+  }
+  
+  header {
+    padding: 20px;
   }
   
   h2 {
