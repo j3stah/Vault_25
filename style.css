@@ -1,9 +1,10 @@
 body {
     font-family: "Roboto Slab", serif; /* Assuming you're using a green theme */
-    color: #fff;
+    color: #fff; /* White text for better contrast */
     margin: 0;
     padding: 0;
     line-height: 1.5;
+    background-color: #24283b; /* Dark blue background */
   }
   
   h1 {
@@ -15,8 +16,9 @@ body {
   
   .nav { /* Changed selector to avoid conflicts with standard nav tag */
     font-family: "Open Sans", sans-serif;
-    background-color: #39b57a; /* Darker green for navigation bar */
+    background-color: #7f47af; /* Purple for the header bar */
     padding: 10px;
+    color: #fff; /* White text for the navigation bar */
   }
   
   nav ul {
@@ -37,7 +39,7 @@ body {
   }
   
   a:hover {
-    color: #a7e9c0; /* Lighter green for hover */
+    color: #ddd; /* Lighter purple for hover */
   }
   
   header {
@@ -56,7 +58,7 @@ body {
   footer {
     text-align: center;
     padding: 10px;
-    background-color: #39b57a; /* Darker green for footer */
-    color: #fff; /* White text for better contrast */
+    background-color: #24283b; /* Dark blue background */
+    color: #fff; /* White text for the footer */
   }
   
