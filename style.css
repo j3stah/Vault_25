@@ -52,10 +52,66 @@ body {
     color: #24283b; /* Dark blue for headings */
   }
   
+  .nav-links {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      gap: 20px; /* Adjust the space between links */
+  }
+  
+  .nav-links li a {
+      text-decoration: none;
+      color: #404040; /* Example text color */
+  }
+  
+  /* Optional: Add hover effect for links */
+  .nav-links li a:hover {
+      color: #787878;
+  }
+  
+  header {
+      background-color: #4A4E69; /* Example: dark shade of grey-blue */
+      padding: 20px 0; /* Add some padding for visual spacing */
+      text-align: center; /* Center the content */
+  }
+  
+  .centered-title a, .nav-links a {
+      color: #F2E9E4; /* Light color for contrast */
+      text-decoration: none; /* Removes underline from links */
+  }
+  
+  .nav-links {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 20px; /* Adjust based on your preference */
+  }
+  
+  /* Optional: Add some hover effect for links */
+  .nav-links a:hover {
+      color: #C9ADA7;
+  }
+  
+  main {
+      flex-grow: 1; /* Allows main to expand and push footer to the bottom */
+  }
+  
+  html, body {
+    height: 100%; /* Make sure the html and body are full height */
+    margin: 0; /* Reset default margin */
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Use viewport height to ensure full height */
+  }
+  
   footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #24283b; /* Dark blue for footer */
-    color: #fff; /* White text for footer */
+      text-align: center;
+      padding: 10px;
+      background-color: #d0d0d0; /* Medium grey for footer */
+      color: #404040; /* Dark grey text for footer */
   }
   
