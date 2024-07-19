@@ -52,33 +52,26 @@ body {
     color: #24283b; /* Dark blue for headings */
   }
   
-  .nav-links {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      padding: 0;
-      gap: 20px; /* Adjust the space between links */
+  header {
+    background-color: #4A4E69; /* Example: dark shade of grey-blue */
+    padding: 20px 0; /* Add some padding for visual spacing */
+    text-align: center; /* Center the content */
   }
-  
-  .nav-links li a {
-      text-decoration: none;
+
+  .centered-title a, .nav-links a {
+    color: #c0a496; /* Light title color */
+    text-decoration: none; /* Removes underline from links */
+  }
+
+  /* Combine and optimize link styles */
+  .nav-links li a, .centered-title a {
+      text-decoration: none; /* Removes underline from links */
       color: #c0a496; /* Example text color */
   }
   
-  /* Optional: Add hover effect for links */
-  .nav-links li a:hover {
+  /* Hover effect for all links within .nav-links */
+  .nav-links a:hover {
       color: #6e87a8;
-  }
-  
-  header {
-      background-color: #4A4E69; /* Example: dark shade of grey-blue */
-      padding: 20px 0; /* Add some padding for visual spacing */
-      text-align: center; /* Center the content */
-  }
-  
-  .centered-title a, .nav-links a {
-      color: #c0a496; /* Light title color */
-      text-decoration: none; /* Removes underline from links */
   }
   
   .nav-links {
@@ -87,18 +80,96 @@ body {
       list-style: none;
       gap: 20px; /* Adjust based on your preference */
   }
-  
+
   /* Optional: Add some hover effect for links */
   .nav-links a:hover {
-      color: #6e87a8;
+    color: #6e87a8;
+  }
+
+  .grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; /* Adjust the space between tiles */
+  padding: 20px; /* Padding around the grid */
+  }
+
+  .poem-link {
+      text-decoration: none;
+      color: inherit;
+      display: block; /* Makes the link fill the entire tile */
+  }
+  
+  .poem-tile {
+      margin: 10px;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border-radius: 8px;
+      transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .poem-link:hover .poem-tile {
+      background-color: #e0e0e0; /* Slightly darker grey on hover */
+  }
+
+.poem-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh; /* This makes the container take the full height of the viewport */
+  margin-top: 50px; /* Adjust this value as needed */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+  
+  main {
+    flex-grow: 1; /* Allows main to expand and push footer to the bottom */
+  }
+  
+  html, body {
+    height: 100%; /* Make sure the html and body are full height */
+    margin: 0; /* Reset default margin */
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Use viewport height to ensure full height */
+  }
+  
+  footer {
+  /* Optional: Add some hover effect for links */
+  .nav-links a:hover {
+    color: #6e87a8; /* Corrected: Added semicolon to end the color property value */
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* Adjust the space between tiles */
+    padding: 20px; /* Padding around the grid */
+  }
+
+.poem-tile a {
+  text-decoration: none;
+  color: #000; /* Black text color */
+  font-weight: bold;
+}
+
+.poem-tile:hover {
+  background-color: #e0e0e0; /* Slightly darker grey on hover */
+}
   }
   
   main {
       flex-grow: 1; /* Allows main to expand and push footer to the bottom */
   }
-  
+
   html, body {
-    height: 100%; /* Make sure the html and body are full height */
     margin: 0; /* Reset default margin */
   }
   
