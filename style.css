@@ -5,6 +5,9 @@ body {
     padding: 0;
     line-height: 1.5;
     background-color: #e0f2ff; /* Lighter blue background */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Use viewport height to ensure full height */
   }
   
   h1 {
@@ -13,7 +16,19 @@ body {
     margin: 1em 0; /* Margin for spacing */
     color: #24283b; /* Dark blue for title */
   }
-  
+
+  h2 {
+    margin-bottom: 10px;
+    color: #24283b; /* Dark blue for headings */
+  }
+
+  main {
+    padding: 20px;
+    text-align: center; /* Center body text */
+    flex-grow: 1; /* Allows main to expand and push footer to the bottom */
+  }
+
+  /* NAVIGATION BAR ----------------------*/
   .nav { /* Changed selector to avoid conflicts with standard nav tag */
     background-color: #24283b; /* Dark blue for navigation bar */
     padding: 10px;
@@ -27,72 +42,39 @@ body {
     margin: 0;
     padding: 0;
   }
-  
-  nav li {
-    display: inline-block;
-    margin: 0 10px; /* Spacing between links */
-  }
-  
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: #6e87a8; /* Poem links are purple when hovered over */
-  }
-  
-  main {
-    padding: 20px;
-    text-align: center; /* Center body text */
-  }
-  
-  h2 {
-    margin-bottom: 10px;
-    color: #24283b; /* Dark blue for headings */
-  }
-  
-  header {
-    background-color: #4A4E69; /* Example: dark shade of grey-blue */
-    padding: 20px 0; /* Add some padding for visual spacing */
-    text-align: center; /* Center the content */
-  }
 
-  .centered-title a, .nav-links a {
-    color: #c0a496; /* Light title color */
-    text-decoration: none; /* Removes underline from links */
-  }
-
-  /* Combine and optimize link styles */
-  .nav-links li a, .centered-title a {
-      text-decoration: none; /* Removes underline from links */
-      color: #c0a496; /* Example text color */
-  }
-  
   /* Hover effect for all links within .nav-links */
   .nav-links a:hover {
-      color: #6e87a8;
-  }
-  
-  .nav-links {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      gap: 20px; /* Adjust based on your preference */
-  }
-
-  /* Optional: Add some hover effect for links */
-  .nav-links a:hover {
     color: #6e87a8;
-  }
+}
 
-  .grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px; /* Adjust the space between tiles */
-  padding: 20px; /* Padding around the grid */
-  }
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px; /* Adjust based on your preference */
+}
 
+.nav-links a:hover {
+  color: #6e87a8; /* Corrected: Added semicolon to end the color property value */
+}
+
+/* END NAVIGATION BAR------------------------------ */
+  
+/* TITLE BLOCK------------------------------------ */
+header {    /* header rectangle */
+  background-color: #081675; /* Example: dark shade of grey-blue */
+  padding: 40px 0; /* Add some padding for visual spacing */
+  text-align: center; /* Center the content */
+}
+
+.centered-title a, .nav-links a {
+  color: #c0a496; /* Light title color */
+  text-decoration: none; /* Removes underline from links */
+}
+/* END TITLE BLOCK--------------------------------------- */
+
+/* Poem styles-------------------------------------- */
   .poem-link {
       text-decoration: none;
       color: inherit;
@@ -110,48 +92,10 @@ body {
   .poem-link:hover .poem-tile {
       background-color: #e0e0e0; /* Slightly darker grey on hover */
   }
-
-.poem-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100vh; /* This makes the container take the full height of the viewport */
-  margin-top: 50px; /* Adjust this value as needed */
-}
-
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-  
-  main {
-    flex-grow: 1; /* Allows main to expand and push footer to the bottom */
-  }
-  
-  html, body {
-    height: 100%; /* Make sure the html and body are full height */
-    margin: 0; /* Reset default margin */
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    min-height: 100vh; /* Use viewport height to ensure full height */
-  }
-  
-  footer {
-  /* Optional: Add some hover effect for links */
-  .nav-links a:hover {
-    color: #6e87a8; /* Corrected: Added semicolon to end the color property value */
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px; /* Adjust the space between tiles */
-    padding: 20px; /* Padding around the grid */
+  .centered-content {
+    text-align: center; /* Center the text inside the article */
+    width: 80%; /* Set a specific width */
+    margin: 0 auto; /* Center the article block horizontally */
   }
 
 .poem-tile a {
@@ -163,21 +107,24 @@ body, html {
 .poem-tile:hover {
   background-color: #e0e0e0; /* Slightly darker grey on hover */
 }
-  }
-  
-  main {
-      flex-grow: 1; /* Allows main to expand and push footer to the bottom */
-  }
+/* END POEM STYLES-------------------------------------- */
 
-  html, body {
-    margin: 0; /* Reset default margin */
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    min-height: 100vh; /* Use viewport height to ensure full height */
-  }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #6e87a8; /* Poem links are purple when hovered over */
+}
+
+.grid-container {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 20px; /* Adjust the space between tiles */
+padding: 20px; /* Padding around the grid */
+}
+
   
   footer {
       text-align: center;
