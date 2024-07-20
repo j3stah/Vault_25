@@ -1,10 +1,10 @@
 body {
     font-family: sans-serif; /* A generic sans-serif font */
-    color: #333; /* Darker blue for body text */
+    color: #e9c79e; /* Darker blue for body text */
     margin: 0;
     padding: 0;
     line-height: 1.5;
-    background-color: #e0f2ff; /* Lighter blue background */
+    background-color: #5d08b3; /* Background color for the entire page */
     display: flex;
     flex-direction: column; /* Stack children vertically */
     min-height: 100vh; /* Use viewport height to ensure full height */
@@ -18,12 +18,12 @@ body {
     font-size: 2em; /* Adjust font size as desired */
     text-align: center;
     margin: 1em 0; /* Margin for spacing */
-    color: #24283b; /* Dark blue for title */
+    color: #e9c79e;
   }
 
   h2 {
     margin-bottom: 10px;
-    color: #24283b; /* Dark blue for headings */
+    color: #e9c79e;
   }
 
   main {
@@ -33,8 +33,8 @@ body {
   }
 
   footer {
-    background-color: #24283b; /* Dark blue, matching your color scheme */
-    color: white; /* Light text color for contrast */
+    background-color: #010101; /* Dark blue, matching your color scheme */
+    color: #fea02f; /* Light text color for contrast */
     text-align: center;
     padding: 10px 0; /* Adjust padding as needed */
     margin-top: auto; /* Push footer to the bottom */
@@ -75,13 +75,13 @@ body {
   
 /* TITLE BLOCK------------------------------------ */
 header {    /* header rectangle */
-  background-color: #081675; /* Example: dark shade of grey-blue */
-  padding: 40px 0; /* Add some padding for visual spacing */
+  background-color: #010101; /* Example: dark shade of grey-blue */
+  padding: 20px 0; /* Add some padding for visual spacing */
   text-align: center; /* Center the content */
 }
 
 .centered-title a, .nav-links a {
-  color: #c0a496; /* Light title color */
+  color: #fea02f; /* Light title color */
   text-decoration: none; /* Removes underline from links */
 }
 /* END TITLE BLOCK--------------------------------------- */
@@ -89,20 +89,20 @@ header {    /* header rectangle */
 /* Poem styles-------------------------------------- */
   .poem-link {
       text-decoration: none;
-      color: inherit;
+      color: #e9c79e;
       display: block; /* Makes the link fill the entire tile */
   }
   
   .poem-tile {
       margin: 10px;
       padding: 20px;
-      background-color: #f0f0f0;
+      background-color: #2e2a2a;
       border-radius: 8px;
       transition: background-color 0.3s; /* Smooth transition for hover effect */
   }
   
   .poem-link:hover .poem-tile {
-      background-color: #e0e0e0; /* Slightly darker grey on hover */
+      background-color: #010101; /* Slightly darker grey on hover */
   }
   .centered-content {
     text-align: center; /* Center the text inside the article */
@@ -127,7 +127,7 @@ a {
 }
 
 a:hover {
-  color: #6e87a8; /* Poem links are purple when hovered over */
+  color: #fea02f; /* Poem links are orange when hovered over */
 }
 
 .grid-container {
