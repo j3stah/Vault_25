@@ -9,7 +9,11 @@ body {
     flex-direction: column; /* Stack children vertically */
     min-height: 100vh; /* Use viewport height to ensure full height */
   }
-  
+    
+  html {
+    height: 100%; /* Ensure html takes full viewport height */
+}
+
   h1 {
     font-size: 2em; /* Adjust font size as desired */
     text-align: center;
@@ -27,6 +31,14 @@ body {
     text-align: center; /* Center body text */
     flex-grow: 1; /* Allows main to expand and push footer to the bottom */
   }
+
+  footer {
+    background-color: #24283b; /* Dark blue, matching your color scheme */
+    color: white; /* Light text color for contrast */
+    text-align: center;
+    padding: 10px 0; /* Adjust padding as needed */
+    margin-top: auto; /* Push footer to the bottom */
+}
 
   /* NAVIGATION BAR ----------------------*/
   .nav { /* Changed selector to avoid conflicts with standard nav tag */
@@ -125,11 +137,4 @@ gap: 20px; /* Adjust the space between tiles */
 padding: 20px; /* Padding around the grid */
 }
 
-  
-  footer {
-      text-align: center;
-      padding: 10px;
-      background-color: #4A4E69; /* Purplish background color */
-      color: #c0a496; /* Dark grey text for footer */
-  }
   
