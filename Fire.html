@@ -8,6 +8,7 @@
 <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
+<div id="header"></div>
 <article class="centered-content">
 <h2>Fire</h2>
 <br/>
@@ -33,6 +34,13 @@ just like a candle<br/>
 set fire to a scandal<br/>
 And they go flying off the handle</p>
 </article>
+<script>
+  fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById('header').innerHTML = data;
+      });
+</script>
 <footer>
   &copy; Hamza Siddeek 2024
 </footer>
