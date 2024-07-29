@@ -1,10 +1,10 @@
 body {
     font-family: "Georgia", sans-serif; /* A generic sans-serif font */
-    color: #e9c79e; /* Darker blue for body text */
+    color: #16942b; 
     margin: 0;
     padding: 0;
     line-height: 1.5;
-    background-color: #5d08b3; /* Background color for the entire page */
+    background-color: #221f25; /* 5d08b3 Background color for the entire page */
     display: flex;
     flex-direction: column; /* Stack children vertically */
     min-height: 100vh; /* Use viewport height to ensure full height */
@@ -18,12 +18,12 @@ body {
     font-size: 2em; /* Adjust font size as desired */
     text-align: center;
     margin: 1em 0; /* Margin for spacing */
-    color: #e9c79e;
+    color: #16942b;
   }
 
   h2 {
     margin-bottom: 10px;
-    color: #e9c79e;
+    color: #16942b;
   }
 
   main {
@@ -34,7 +34,7 @@ body {
 
   footer {
     background-color: #010101; /* Dark blue, matching your color scheme */
-    color: #fea02f; /* Light text color for contrast */
+    color: #16942b; /* Light text color for contrast */
     text-align: center;
     padding: 10px 0; /* Adjust padding as needed */
     margin-top: auto; /* Push footer to the bottom */
@@ -81,7 +81,7 @@ header {    /* header rectangle */
 }
 
 .centered-title a, .nav-links a {
-  color: #fea02f; /* Light title color */
+  color: #16942b; /* Light title color  fea02f*/
   text-decoration: none; /* Removes underline from links */
 }
 /* END TITLE BLOCK--------------------------------------- */
@@ -89,14 +89,14 @@ header {    /* header rectangle */
 /* Poem styles-------------------------------------- */
   .poem-link {
       text-decoration: none;
-      color: #e9c79e;
+      color: #16942b; /*e9c79e */
       display: block; /* Makes the link fill the entire tile */
   }
   
   .poem-tile {
       margin: 10px;
       padding: 20px;
-      background-color: #2e2a2a;
+      background-color: #000000;
       border-radius: 8px;
       transition: background-color 0.3s; /* Smooth transition for hover effect */
   }
