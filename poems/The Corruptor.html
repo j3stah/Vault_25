@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <title>The Corruptor</title>
-<link href="style.css" rel="stylesheet"/>
+<link href="../style.css" rel="stylesheet"/>
 </head>
 <body>
 <div id="header"></div>
@@ -27,7 +27,7 @@ They fear the chaos he fears the pass-age of time<br/>
 They resolve to save a rotting tree, he runs away-from the grime</p>
 </article>
 <script>
-  fetch('header.html')
+  fetch('../header.html')
       .then(response => response.text())
       .then(data => {
           document.getElementById('header').innerHTML = data;

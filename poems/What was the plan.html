@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <title>What was the plan</title>
-<link href="style.css" rel="stylesheet"/>
+<link href="../style.css" rel="stylesheet"/>
 </head>
 <body>
 <div id="header"></div>
@@ -64,7 +64,7 @@ I’d put myself through the cost, but what was the object?<br/>
 Did I even still want what I’d held as a prospect? </p>
 </article>
 <script>
-  fetch('header.html')
+  fetch('../header.html')
       .then(response => response.text())
       .then(data => {
           document.getElementById('header').innerHTML = data;
