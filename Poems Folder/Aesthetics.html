@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <title>Aesthetics</title>
-<link href="style.css" rel="stylesheet"/>
+<link href="../style.css" rel="stylesheet"/>
 </head>
 <body>
 <div id="header"></div>
@@ -36,7 +36,7 @@ My friends sleep content at the day we have spent<br/>
 I peacefully watch the streetlights glide by</p>
 </article>
 <script>
-  fetch('header.html')
+  fetch('../header.html')
       .then(response => response.text())
       .then(data => {
           document.getElementById('header').innerHTML = data;
