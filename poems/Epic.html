@@ -4,27 +4,24 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Hail</title>
-<link href="style.css" rel="stylesheet"/>
+<title>Epic</title>
+<link href="../style.css" rel="stylesheet"/>
 </head>
 <body>
 <div id="header"></div>
 <article class="centered-content">
-<h2>Hail</h2>
+<h2>Epic</h2>
 <br/>
-Icy meteors smashing<br/>
-Sky glass crashing<br/>
-Earth, at itself, hurling<br/>
-missiles from the sky<br/>
-The frozen stars cease to abate<br/>
-stampeding through the storm cloud gate<br/>
-They do not stop<br/>
-or think<br/>
-or wait<br/>
-As groundward they fly</p>
+The thrill of the Hunt! the Chase! the Prowl!<br/>
+The Excitement of it all makes you want to Howl!<br/>
+<br/>
+<br/>
+Battle cry roars, <br/>
+Sprinting on air,<br/>
+You feel like a Legend with the wind in your hair</p>
 </article>
 <script>
-  fetch('header.html')
+  fetch('../header.html')
       .then(response => response.text())
       .then(data => {
           document.getElementById('header').innerHTML = data;

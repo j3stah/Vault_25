@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <title>Sword</title>
-<link href="style.css" rel="stylesheet"/>
+<link href="../style.css" rel="stylesheet"/>
 </head>
 <body>
 <div id="header"></div>
@@ -21,7 +21,7 @@ Just from some<br/>
 Forceful hits</p>
 </article>
 <script>
-  fetch('header.html')
+  fetch('../header.html')
       .then(response => response.text())
       .then(data => {
           document.getElementById('header').innerHTML = data;
