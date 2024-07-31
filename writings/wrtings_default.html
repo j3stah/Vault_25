@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Fire</title>
+<link href="../style.css" rel="stylesheet"/>
+</head>
+<body>
+	<div id="header"></div>
+	<p style="padding-left: 50px; padding-right: 50px;"></p>
+	<script>
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

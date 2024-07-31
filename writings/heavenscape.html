@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Fire</title>
+<link href="../style.css" rel="stylesheet"/>
+</head>
+<body>
+	<div id="header"></div>
+	<p style="padding-left: 50px; padding-right: 50px;">At some point when I was young, I was at some carnival or fair. It might have been a family outing, more likely a friends birthday. We were all getting into some sort of bumper-car-esque ride. Something where we were all getting into our own pods and greatly anticipating pushing the rides to their limits by zooming around under the flashing lights. At the last moment, a worker came over and told me that mine was... broken. I couldn't ride in it. I had to sit on the bench until the ride was over and then I could trade with someone else. It was from that bench, watching my friends dash off into the colored lights on the horizon, the electronic music pulsing through the air around them that I gained a new perspective. Seeing my friends in such a sugary trance from the music, eyes trailing with color while I was unaffected by the music that, had it not been for chance, would have had me fully immersed, parading it's steps and chanting it's laughs of delight, drawing me out farther to a cotton-candy armageddon of sweet fading music jolting my body to rock back and forth with ecstasy... It shook me. And I saw my friends throw their heads back in laughter as the music blared about setting us all free tonight. But I was beyond it's jurisdiction. And I saw my friends and thought deep down that I was the one liberated, and they the ones chained. If there is the concept of a hellscape, then this garish arcade must be the poisoned syrup that is a heavenscape. An equal and opposite horror. A subtle evil. A creeping realization that life was never meant to be this good without dying or meeting the Devil first. 
+    </p>
+	<script>
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

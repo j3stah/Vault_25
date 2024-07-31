@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Aesthetics</title>
+<link href="../style.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="header"></div>
+<article class="centered-content">
+<h2>Poem Title</h2>
+<br/>
+Line 1<br/>
+Line 2<br/>
+<br/>
+<br/>
+Line 3<br/>
+Line 4<br/> 
+</article>
+<script>
+  fetch('../header.html')
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById('header').innerHTML = data;
+      });
+</script>
+<footer>
+  &copy; Hamza Siddeek 2024
+</footer>
+</body>
+</html>
