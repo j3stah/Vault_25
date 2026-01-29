@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:wght@700&display=swap');
+
 body {
     font-family: "Georgia", sans-serif; /* A generic sans-serif font */
     color: #16942b; 
@@ -78,6 +80,12 @@ header {    /* header rectangle */
   background-color: #010101; /* Example: dark shade of grey-blue */
   padding: 20px 0; /* Add some padding for visual spacing */
   text-align: center; /* Center the content */
+}
+
+.centered-title {
+  font-family: 'Cinzel', 'Playfair Display', serif; /* Elegant, distinctive font */
+  font-weight: 700; /* Bold weight for impact */
+  letter-spacing: 2px; /* Adds spacing between letters for elegance */
 }
 
 .centered-title a, .nav-links a {
