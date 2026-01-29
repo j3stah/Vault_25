@@ -42,7 +42,7 @@ body {
 
   /* NAVIGATION BAR ----------------------*/
   .nav { /* Changed selector to avoid conflicts with standard nav tag */
-    background-color: #24283b; /* Dark blue for navigation bar */
+    background-color: #fea02f; /* Dark blue for navigation bar */
     padding: 10px;
     color: #fff; /* White text for navigation bar */
     display: flex; /* Enables horizontal layout */
