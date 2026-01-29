@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:wght@700&display=swap');
 
+a {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
 body {
     font-family: "Georgia", sans-serif; /* A generic sans-serif font */
     color: #16942b; 
@@ -16,17 +22,17 @@ body {
     height: 100%; /* Ensure html takes full viewport height */
 }
 
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
   h1 {
     font-size: 2em; /* Adjust font size as desired */
     text-align: center;
     margin: 1em 0; /* Margin for spacing */
     color: #16942b;
-  }
-
-  h1.centered-title {
-    font-family: 'Cinzel', 'Playfair Display', serif;
-    font-weight: 700;
-    letter-spacing: 2px;
   }
 
   h2 {
@@ -46,6 +52,9 @@ body {
     text-align: center;
     padding: 10px 0; /* Adjust padding as needed */
     margin-top: auto; /* Push footer to the bottom */
+    font-family: 'Cinzel', 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
   /* NAVIGATION BAR ----------------------*/
