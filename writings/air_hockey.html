@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Air Hockey</title>
+<link href="../style.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="header"></div>
+<article class="centered-content">
+<h2>Air Hockey</h2>
+<br/>
+Air hockey is, at its core, a two-player game. A battle of wits between minds. In a perfect, frictionless world, which strategy will dominate? But when there are none left to oppose, who or what does one turn to in search of an air hockey challenge? There was no answer to this question. Until four bright minds in MTE 100 turned their godly gaze upon this issue and vowed never to rest until they developed a half-working proof of concept. Along the way, we broke all seven deadly sins of Air Hockey. This is the first and only time this machination shall require an introduction such as this.<br/>
+<br/>
+I bring you…<br/>
+(*trumpets and Linkin Park start at the same time*)<br/>
+</article>
+<script>
+  fetch('../writing_header.html')
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById('header').innerHTML = data;
+      });
+</script>
+<footer>
+  &copy; Hamza Siddeek 2026
+</footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Clocktower</title>
+<link href="../style.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="header"></div>
+<article class="centered-content">
+<h2>Clocktower</h2>
+<br/>
+      Grinning stood the clock tower <br>
+      It's glassy scales alight <br>
+      Encrusted with it's shopfronts <br>
+      All glowing through the night <br>
+      But faint halls in its underbelly <br>
+      Only trod through obscure stairs <br>
+      Blank and wrongly quiet <br>
+      Signs of life yet humans scarce</p>
+</article>
+<script>
+  fetch('../poem_header.html')
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById('header').innerHTML = data;
+      });
+</script>
+<footer>
+  &copy; Hamza Siddeek 2024
+</footer>
+</body>
+</html>
