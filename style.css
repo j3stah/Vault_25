@@ -1,163 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:wght@700&display=swap');
-
-a {
-  font-family: 'Cinzel', 'Playfair Display', serif;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
 body {
-    font-family: "Georgia", sans-serif; /* A generic sans-serif font */
-    color: #16942b; 
-    margin: 0;
-    padding: 0;
+    background-color: #0c0d0c;
+    background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                      linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    color: #1aff80;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0 0 5px #1aff80;
     line-height: 1.5;
-    background-color: #221f25; /* 5d08b3 Background color for the entire page */
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    min-height: 100vh; /* Use viewport height to ensure full height */
-  }
-    
-  html {
-    height: 100%; /* Ensure html takes full viewport height */
-}
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cinzel', 'Playfair Display', serif;
-    font-weight: 700;
-    letter-spacing: 2px;
-  }
-
-  h1 {
-    font-size: 2em; /* Adjust font size as desired */
-    text-align: center;
-    margin: 1em 0; /* Margin for spacing */
-    color: #16942b;
-  }
-
-  h2 {
-    margin-bottom: 10px;
-    color: #16942b;
-  }
-
-  main {
     padding: 20px;
-    text-align: center; /* Center body text */
-    flex-grow: 1; /* Allows main to expand and push footer to the bottom */
-  }
-
-  footer {
-    background-color: #010101; /* Dark blue, matching your color scheme */
-    color: #16942b; /* Light text color for contrast */
-    text-align: center;
-    padding: 10px 0; /* Adjust padding as needed */
-    margin-top: auto; /* Push footer to the bottom */
-    font-family: 'Cinzel', 'Playfair Display', serif;
-    font-weight: 700;
-    letter-spacing: 2px;
 }
 
-  /* NAVIGATION BAR ----------------------*/
-  .nav { /* Changed selector to avoid conflicts with standard nav tag */
-    background-color: #fea02f; /* Dark blue for navigation bar */
-    padding: 10px;
-    color: #fff; /* White text for navigation bar */
-    display: flex; /* Enables horizontal layout */
-    justify-content: space-between; /* Evenly distributes links */
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Hover effect for all links within .nav-links */
-  .nav-links a:hover {
-    color: #fea02f;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 20px; /* Adjust based on your preference */
-}
-
-.nav-links a:hover {
-  color: #fea02f; /* Corrected: Added semicolon to end the color property value */
-}
-
-/* END NAVIGATION BAR------------------------------ */
-  
-/* TITLE BLOCK------------------------------------ */
-header {    /* header rectangle */
-  background-color: #010101; /* Example: dark shade of grey-blue */
-  padding: 20px 0; /* Add some padding for visual spacing */
-  text-align: center; /* Center the content */
-}
-
-.centered-title {
-  font-family: 'Cinzel', 'Playfair Display', serif; /* Elegant, distinctive font */
-  font-weight: 700; /* Bold weight for impact */
-  letter-spacing: 2px; /* Adds spacing between letters for elegance */
-}
-
-.centered-title a, .nav-links a {
-  color: #16942b; /* Light title color  fea02f*/
-  text-decoration: none; /* Removes underline from links */
-}
-/* END TITLE BLOCK--------------------------------------- */
-
-/* Poem styles-------------------------------------- */
-  .poem-link {
-      text-decoration: none;
-      color: #16942b; /*e9c79e */
-      display: block; /* Makes the link fill the entire tile */
-  }
-  
-  .poem-tile {
-      margin: 10px;
-      padding: 20px;
-      background-color: #000000;
-      border-radius: 8px;
-      transition: background-color 0.3s; /* Smooth transition for hover effect */
-  }
-  
-  .poem-link:hover .poem-tile {
-      background-color: #010101; /* Slightly darker grey on hover */
-  }
-  .centered-content {
-    text-align: center; /* Center the text inside the article */
-    width: 80%; /* Set a specific width */
-    margin: 0 auto; /* Center the article block horizontally */
-  }
-
-.poem-tile a {
-  text-decoration: none;
-  color: #000; /* Black text color */
-  font-weight: bold;
-}
-
-.poem-tile:hover {
-  background-color: #e0e0e0; /* Slightly darker grey on hover */
-}
-/* END POEM STYLES-------------------------------------- */
-
+/* Make links look like old terminal commands */
 a {
-  color: inherit;
-  text-decoration: none;
+    color: #1aff80;
+    text-decoration: none;
+    border: 1px solid #1aff80;
+    padding: 2px 5px;
+    margin: 5px;
+    display: inline-block;
 }
 
 a:hover {
-  color: #fea02f; /* Poem links are orange when hovered over */
+    background: #1aff80;
+    color: #0c0d0c;
+    box-shadow: 0 0 15px #1aff80;
 }
 
-.grid-container {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 20px; /* Adjust the space between tiles */
-padding: 20px; /* Padding around the grid */
+h1 {
+    border-bottom: 2px solid #1aff80;
+    display: inline-block;
 }
-
-  
