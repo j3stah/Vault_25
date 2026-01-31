@@ -13,30 +13,49 @@
         <marquee scrollamount="10"> >>>ACCESS GRANTED TO VAULT 25.....//WELCOME TO THE BUNKER//.........//ALL SYSTEMS ONLINE//.....<<<</marquee>
   </header>
 
-<div class="gif-container">
-    <img src="assets/cat_spinning.gif" alt="Vault Animation">
-</div>  
-<div id="header"></div>
+      <div class="side-bookends">
+        <img src="assets/construction.gif" id="under_construction" class="vault-gif" alt="Under Construction Sign">
+        <img src="assets/construction.gif" id="under_construction_two" class="vault-gif" alt="Under Construction Sign 2">
+   
+      </div>
 
-<audio id="terminal-music" loop>
-    <source src="assets/vault_ambient.mp3" type="audio/mpeg">
-</audio>
+  <div id="header"></div>
 
-<div style="text-align: center; margin: 20px;">
-    <button onclick="playMusic()" id="boot-btn">[ INITIALIZE AUDIO SUBSYSTEM ]</button>
+  <main>
+
+    <audio id="terminal-music" loop>
+        <source src="assets/vault_ambient.mp3" type="audio/mpeg">
+    </audio>
+
+    <div style="text-align: center; margin: 20px;">
+        <button onclick="playMusic()" id="boot-btn">[ INITIALIZE AUDIO SUBSYSTEM ]</button>
+    </div>
+
+    <script>
+        function playMusic() {
+            const music = document.getElementById('terminal-music');
+            music.play();
+            document.getElementById('boot-btn').style.display = 'none'; // Hides button after click
+        }
+    </script>
+
+    <div class="centered-content">
+        <p>Hiiiiii!!1!!!! Welcome to my website! I've always wanted a personal website to kind of just dump stuff on and express myself. It's really empty right now but at least it's up and running right?
+            Over time I'll add more and more stuff until it's own little world floating in cyberspace. But for now, feel free to check out wherever!
+        </p>
+    </div>
+
+    <div class="gif-grid">
+    <img src="assets/zona_oscura.gif" id="zona-oscura" class="vault-gif">
+    <img src="assets/urban_snipers.gif" class="vault-gif">
+    <img src="assets/sunset_on_dreams.gif" class="vault-gif">
+    <img src="assets/best_frontpage.gif" id="frontpage-btn" class="vault-gif">
+    <img src="assets/alone_but_not_lonely.gif" class="vault-gif">
+    <img src="assets/sri_lanka_america.gif" class="vault-gif">
 </div>
 
-<script>
-    function playMusic() {
-        const music = document.getElementById('terminal-music');
-        music.play();
-        document.getElementById('boot-btn').style.display = 'none'; // Hides button after click
-    }
-</script>
+  </main>
 
-<main>
-
-</main>
   <script>
     fetch('main_pages_header.html')
         .then(response => response.text())
