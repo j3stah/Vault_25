@@ -4,8 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vault 25</title>
+  <link rel="icon" type="image/png" href="site_icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
+
+<audio id="terminal-music" loop>
+    <source src="vault_ambient.mp3" type="audio/mpeg">
+</audio>
+
+<div style="text-align: center; margin: 20px;">
+    <button onclick="playMusic()" id="boot-btn">[ INITIALIZE AUDIO SUBSYSTEM ]</button>
+</div>
+
+<script>
+    function playMusic() {
+        const music = document.getElementById('terminal-music');
+        music.play();
+        document.getElementById('boot-btn').style.display = 'none'; // Hides button after click
+    }
+</script>
+
 <body>
   <header>
         <marquee scrollamount="10"> >>>ACCESS GRANTED TO VAULT 25.....//WELCOME TO THE BUNKER//.........//ALL SYSTEMS ONLINE//.....<<<</marquee>
