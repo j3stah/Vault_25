@@ -30,3 +30,51 @@ h1 {
     border-bottom: 2px solid #1aff80;
     display: inline-block;
 }
+
+/* Container for the nav bar */
+.vault-nav {
+    display: flex;
+    justify-content: center; /* Centers the menu */
+    gap: 15px;               /* Space between buttons */
+    padding: 20px 0;
+    border-top: 1px solid #1aff80;
+    border-bottom: 1px solid #1aff80;
+    margin: 20px 0;
+    background: rgba(26, 255, 128, 0.05); /* Very faint green tint */
+}
+
+/* Individual Link Styling */
+.nav-item {
+    color: #1aff80;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px 10px;
+    transition: all 0.2s ease-in-out;
+    letter-spacing: 1px;
+}
+
+/* Hover Effect: The "Glow" */
+.nav-item:hover {
+    color: #fff;
+    background-color: #1aff80;
+    box-shadow: 0 0 15px #1aff80;
+    text-shadow: none;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Mobile Friendly: Stack links if screen is too small */
+@media (max-width: 600px) {
+    .vault-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* This is our 'Active' state style */
+.active-link {
+    color: #fff !important; /* Forces text to white */
+    text-shadow: 0 0 15px #1aff80, 0 0 25px #1aff80; /* Intense green glow */
+    border-bottom: 2px solid #1aff80; /* Underline indicator */
+    background: rgba(26, 255, 128, 0.2); /* Faint highlight box */
+}

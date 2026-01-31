@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <title>About Site</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+    // This waits for your header fetch to finish
+    window.addEventListener('load', function() {
+        const homeButton = document.getElementById('nav-links');
+        if(homeButton) homeButton.classList.add('active-link');
+    });
+</script>
 </head>
 <body>
     <div id="header"></div>

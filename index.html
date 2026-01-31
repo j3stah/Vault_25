@@ -6,13 +6,20 @@
   <link rel="icon" type="image/png" href="assets/site_icon.png">
   <title>Vault 25</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    // This waits for your header fetch to finish
+    window.addEventListener('load', function() {
+        const homeButton = document.getElementById('nav-home');
+        if(homeButton) homeButton.classList.add('active-link');
+    });
+</script>
 </head>
 <body>
   <header>
         <marquee scrollamount="3">>>> SYSTEM READY... ACCESSING VAULT_25 DATABASE... WELCOME, OVERSEER <<<</marquee>
         <h1>[ VAULT_25 ]</h1>
     </header>
-<!--<div id="header"></div>-->
+<div id="header"></div>
 <main>
   <section class="featured-poem">
     <h2>Featured Poem</h2>
