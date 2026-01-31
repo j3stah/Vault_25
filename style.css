@@ -81,3 +81,13 @@ header {
     width: 100%;
     margin-bottom: 30px;
 }
+
+/* This targets the h1 inside your header */
+#header h1 {
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 20px auto; /* Adds space and centers it */
+    color: #1aff80;
+    text-shadow: 0 0 10px #1aff80; /* Vault glow! */
+}
