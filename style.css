@@ -73,14 +73,6 @@ h1 {
     }
 }
 
-/* This is our 'Active' state style */
-.active-link {
-    color: #fff !important; /* Forces text to white */
-    text-shadow: 0 0 15px #1aff80, 0 0 25px #1aff80; /* Intense green glow */
-    border-bottom: 2px solid #1aff80; /* Underline indicator */
-    background: rgba(26, 255, 128, 0.2); /* Faint highlight box */
-}
-
 /* This targets the header area specifically */
 header {
     display: flex;
