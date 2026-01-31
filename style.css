@@ -91,3 +91,18 @@ header {
     color: #1aff80;
     text-shadow: 0 0 10px #1aff80; /* Vault glow! */
 }
+
+#boot-btn {
+    background: transparent;
+    color: #1aff80;
+    border: 1px solid #1aff80;
+    padding: 10px 20px;
+    font-family: 'Courier New', monospace;
+    cursor: pointer;
+    box-shadow: 0 0 5px #1aff80;
+}
+
+#boot-btn:hover {
+    background: #1aff80;
+    color: #000;
+}
