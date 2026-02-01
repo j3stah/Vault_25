@@ -188,10 +188,3 @@ header {
     width: 300px; /* Adjust this number until it looks right to you */
     height: auto;
 }
-
-/* Shrink the Frontpage button */
-#frontpage-btn {
-    width: 150px;  /* This is the standard 'button' size for that era */
-    /*height: 31px;*/
-    object-fit: contain; /* Ensures it doesn't distort while shrinking */
-}
