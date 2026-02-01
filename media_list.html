@@ -4,12 +4,17 @@
 <head>
 <meta charset="utf-8"/>
 <title>Media List</title>
-<link rel="icon" type="image/png" href="../assets/site_icon.png">
-<link href="../style.css" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="assets/site_icon.png">
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
+<header>
+  <marquee scrollamount="10"> >>>ACCESS GRANTED TO VAULT 25.....//WELCOME TO THE BUNKER//.........//ALL SYSTEMS ONLINE//.....<<<</marquee>
+</header>
+
 <div id="header"></div>
-<article class="centered-content">
+
+<div class="content-wrapper">
 <h2>Media List</h2>
 <br/>
 ///////////////Finished////////////////////<br/>
@@ -287,9 +292,10 @@ Molotov masterpiece<br/>
 midnight club 3<br/>
 un chien andalou<br/>
 camomane making stang<br/>
-</article>
+</div>
+
 <script>
-  fetch('../writing_header.html')
+  fetch('main_pages_header.html')
       .then(response => response.text())
       .then(data => {
           document.getElementById('header').innerHTML = data;

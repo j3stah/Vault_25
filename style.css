@@ -160,6 +160,14 @@ header {
     object-fit: cover;     /* Keeps them from looking stretched */
 }
 
+/* Centered container with left-aligned text */
+.content-wrapper {
+    max-width: 800px;      /* Constrains the width */
+    margin: 0 auto;        /* Centers the container */
+    padding: 0 20px;       /* Adds breathing room on sides */
+    text-align: left;      /* Left-aligns the text inside */
+}
+
 .side-bookends {
     display: flex;
     justify-content: space-between; /* Pushes them to the far left and right */
@@ -187,4 +195,96 @@ header {
 #zona-oscura {
     width: 300px; /* Adjust this number until it looks right to you */
     height: auto;
+}
+
+/* ===== BLING PAGE STYLES ===== */
+
+/* Masonry/Pinterest-style layout for bling page */
+.bling-masonry {
+    column-count: 4;
+    column-gap: 20px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.bling-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    border: 2px solid #1aff80;
+    padding: 10px;
+    background: rgba(26, 255, 128, 0.05);
+    transition: all 0.3s ease;
+    max-width: 150px;
+}
+
+.bling-item:hover {
+    box-shadow: 0 0 20px #1aff80;
+    transform: translateY(-5px);
+}
+
+.bling-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #1aff80;
+}
+
+.bling-caption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+/* Featured section for bling page */
+.bling-featured {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 2px solid #1aff80;
+    background: rgba(26, 255, 128, 0.03);
+}
+
+.bling-featured h2 {
+    text-align: center;
+    border-bottom: 2px solid #1aff80;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.featured-gif {
+    width: 100%;
+    height: auto;
+    border: 2px solid #1aff80;
+    box-shadow: 0 0 10px #1aff80;
+    transition: all 0.3s ease;
+}
+
+.featured-gif:hover {
+    box-shadow: 0 0 25px #1aff80;
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments for bling page */
+@media (max-width: 900px) {
+    .bling-masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .bling-masonry {
+        column-count: 1;
+    }
+    
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
 }
