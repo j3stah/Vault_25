@@ -336,3 +336,13 @@ header {
     40% { transform: translate(3px, 2px) rotate(-1deg); }
     100% { transform: translate(0px, 0px) rotate(0deg); }
 }
+
+/* Add this to your CSS file */
+.reboot-flash {
+    animation: flash 0.3s ease-out;
+}
+
+@keyframes flash {
+    0% { background: white; opacity: 1; }
+    100% { background: transparent; opacity: 0; }
+}
