@@ -31,29 +31,16 @@
 <script>
     const btn = document.getElementById('big-red-button');
     const cracks = document.getElementById('screen-cracks');
-    const sfx = document.getElementById('break-sound');
 
     btn.addEventListener('click', function() {
-        // 1. Play the sound immediately
-        // .currentTime = 0 allows the sound to restart if they click fast
-        sfx.currentTime = 0; 
-        sfx.play();
-
-        // 2. Toggle the cracks
-        cracks.classList.toggle('is-broken');
-
-        // 3. Update the UI
-        if (cracks.classList.contains('is-broken')) {
-            btn.innerText = "FIX SYSTEM";
-            btn.style.backgroundColor = "#550000";
-        } else {
-            btn.innerText = "DO NOT PRESS";
-            btn.style.backgroundColor = "#ff0000";
-    }
-});
+        // Show the cracks
+        cracks.classList.add('is-broken');
+        
+        // Optional: Change the button text
+        btn.innerText = "SYSTEM FAILURE";
+        btn.style.backgroundColor = "#550000";
+    });
 </script>
-
-<audio id="break-sound" src="assets/glass_break_sound.mp3" preload="auto"></audio>
 
 </body>
 </html>
