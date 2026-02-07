@@ -33,6 +33,14 @@ h1 {
     margin: 10px 0; 
 }
 
+.content-wrapper h2 {
+    text-align: center;
+}
+
+.section-title {
+    text-align: center;
+}
+
 .welcome-block {
     text-align: left;
     max-width: 900px;
@@ -162,7 +170,7 @@ header {
 
 /* Centered container with left-aligned text */
 .content-wrapper {
-    max-width: 800px;      /* Constrains the width */
+    max-width: 1200px;     /* Wider for longer lines */
     margin: 0 auto;        /* Centers the container */
     padding: 0 20px;       /* Adds breathing room on sides */
     text-align: left;      /* Left-aligns the text inside */
