@@ -41,6 +41,19 @@ h1 {
     text-align: center;
 }
 
+.guestbook-section {
+    text-align: center;
+}
+
+.guestbook-note {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.centered-note {
+    text-align: center;
+}
+
 .welcome-block {
     text-align: left;
     max-width: 900px;
