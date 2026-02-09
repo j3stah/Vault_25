@@ -311,7 +311,6 @@ header {
 }
 
 
-/* The Button Styling */
 #big-red-button {
     background-color: #ff0000;
     color: white;
@@ -324,37 +323,49 @@ header {
     font-size: 2rem;
     display: block;
     margin: 20px auto;
+    transition: background-color 0.3s; /* Smooth color change when fixing */
 }
 
-#big-red-button:active {
-    transform: scale(0.95);
-    box-shadow: 0 0 5px #ff0000;
-}
-
-/* The Cracks Overlay */
+/* The Overlay */
 #screen-cracks {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    pointer-events: none; /* Allows you to still click things 'under' the cracks */
-    z-index: 9999; /* Keeps it on top of everything */
-    background-image: url('assets/glass_broken.png'); /* A transparent crack texture */
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url('assets/broken_glass_2.png');
     background-size: cover;
-    display: none; /* Hidden by default */
+    opacity: 0; /* Use opacity instead of display:none for animations */
+    transition: opacity 0.1s;
 }
 
-/* This class gets added by JavaScript */
+/* State: Broken */
 .is-broken {
-    display: block !important;
-    animation: shake 0.2s ease-in-out;
+    opacity: 1 !important;
+    animation: shake 0.15s ease-in-out;
 }
 
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    40% { transform: translate(3px, 2px) rotate(-1deg); }
-    100% { transform: translate(0px, 0px) rotate(0deg); }
+/* State: Repairing (Flicker) */
+/* Apply this class to the BODY via JS for 0.2s when fixing */
+/* Use !important to make sure it overrides your site's black background */
+/* Update your flicker animation */
+/* Replace your old reboot-flicker class */
+.reboot-flicker {
+    animation: system-surge 0.15s ease-out !important;
+}
+
+@keyframes system-surge {
+    0% { 
+        filter: brightness(1); 
+    }
+    50% { 
+        filter: brightness(2.5) contrast(1.2); /* Makes the green text pop without whitening the screen */
+        background-color: rgba(26, 255, 128, 0.05); /* Extremely subtle tint */
+    }
+    100% { 
+        filter: brightness(1); 
+    }
 }
 

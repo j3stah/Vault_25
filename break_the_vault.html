@@ -31,14 +31,40 @@
 <script>
     const btn = document.getElementById('big-red-button');
     const cracks = document.getElementById('screen-cracks');
+    const breakSound = document.getElementById('break-sfx');
+    const fixSound = document.getElementById('fix-sfx');
 
     btn.addEventListener('click', function() {
-        // Show the cracks
-        cracks.classList.add('is-broken');
-        
-        // Optional: Change the button text
-        btn.innerText = "SYSTEM FAILURE";
-        btn.style.backgroundColor = "#550000";
+        if (!cracks.classList.contains('is-broken')) {
+            console.log("State: Breaking");
+            cracks.classList.add('is-broken');
+            
+            // Text and Style
+            btn.textContent = "REPAIR SYSTEM"; // Using textContent is more reliable
+            btn.style.backgroundColor = "#550000";
+            
+            // Sound
+            breakSound.currentTime = 0;
+            breakSound.play().catch(e => console.log("Sound blocked"));
+            
+        } else {
+            console.log("State: Fixing");
+            cracks.classList.remove('is-broken');
+            
+            // Text and Style
+            btn.textContent = "DO NOT PRESS";
+            btn.style.backgroundColor = "#ff0000";
+
+            // Trigger Flicker on the WHOLE page
+            document.body.classList.add('reboot-flicker');
+            setTimeout(() => {
+                document.body.classList.remove('reboot-flicker');
+            }, 200);
+
+            // Sound
+            fixSound.currentTime = 0;
+            fixSound.play().catch(e => console.log("Sound blocked"));
+        }
     });
 </script>
 
