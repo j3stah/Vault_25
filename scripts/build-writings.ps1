@@ -56,6 +56,47 @@ $formattedContent
   [System.IO.File]::WriteAllText($OutputPath, $htmlContent, [System.Text.UTF8Encoding]::new($false))
 }
 
+function Publish-Changes {
+  param([string]$RepoRoot)
+
+  Push-Location $RepoRoot
+  try {
+    $insideRepo = & git rev-parse --is-inside-work-tree 2>$null
+    if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($insideRepo)) {
+      return $false
+    }
+
+    $status = & git status --porcelain --untracked-files=all
+    if ($LASTEXITCODE -ne 0) {
+      return $false
+    }
+
+    if ([string]::IsNullOrWhiteSpace(($status -join "`n"))) {
+      return $false
+    }
+
+    & git add -- writings all-writings.html
+    if ($LASTEXITCODE -ne 0) {
+      return $false
+    }
+
+    & git commit -m "Auto-generated writing pages"
+    if ($LASTEXITCODE -ne 0) {
+      return $false
+    }
+
+    & git push origin HEAD
+    if ($LASTEXITCODE -ne 0) {
+      return $false
+    }
+
+    return $true
+  }
+  finally {
+    Pop-Location
+  }
+}
+
 if (-not (Test-Path $SourceDir)) {
   New-Item -ItemType Directory -Path $SourceDir -Force | Out-Null
 }
@@ -69,6 +110,12 @@ foreach ($file in $textFiles) {
 
   Convert-TextToHtml -TextFile $file.FullName -OutputPath $htmlOutput -Title $title
   Write-Host "Converted: $($file.Name) -> $baseName.html"
+}
+
+$repoRoot = Split-Path -Parent $PSScriptRoot
+$published = Publish-Changes -RepoRoot $repoRoot
+if ($published) {
+  Write-Host "Published changes to GitHub"
 }
 
 Write-Host "Processed $($textFiles.Count) writing files"
