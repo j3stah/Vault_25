@@ -9,26 +9,32 @@ function Invoke-Build {
   & powershell -NoProfile -ExecutionPolicy Bypass -File $buildScript
 }
 
-Invoke-Build
+function Get-Snapshot {
+  param([string]$Path)
 
-$watcher = New-Object System.IO.FileSystemWatcher
-$watcher.Path = (Resolve-Path $SourceDir).Path
-$watcher.Filter = '*.txt'
-$watcher.IncludeSubdirectories = $false
-$watcher.NotifyFilter = [System.IO.NotifyFilters]'FileName, LastWrite, CreationTime'
-$watcher.EnableRaisingEvents = $true
-
-$action = {
-  Start-Sleep -Milliseconds 200
-  & powershell -NoProfile -ExecutionPolicy Bypass -File $event.MessageData
+  Get-ChildItem -Path $Path -Filter '*.txt' -File |
+    Sort-Object Name |
+    ForEach-Object {
+      [pscustomobject]@{
+        Name = $_.Name
+        Length = $_.Length
+        LastWriteTimeUtc = $_.LastWriteTimeUtc
+      }
+    }
 }
 
-Register-ObjectEvent -InputObject $watcher -EventName Created -MessageData $buildScript -Action $action | Out-Null
-Register-ObjectEvent -InputObject $watcher -EventName Changed -MessageData $buildScript -Action $action | Out-Null
-Register-ObjectEvent -InputObject $watcher -EventName Renamed -MessageData $buildScript -Action $action | Out-Null
-Register-ObjectEvent -InputObject $watcher -EventName Deleted -MessageData $buildScript -Action $action | Out-Null
+Invoke-Build
+
+$resolvedSource = (Resolve-Path $SourceDir).Path
+$previous = Get-Snapshot -Path $resolvedSource
 
 Write-Host "Watching $SourceDir for writing changes. Press Ctrl+C to stop."
 while ($true) {
-  Wait-Event -Timeout 1 | Out-Null
+  Start-Sleep -Seconds 1
+  $current = Get-Snapshot -Path $resolvedSource
+
+  if (($current | ConvertTo-Json -Depth 5) -ne ($previous | ConvertTo-Json -Depth 5)) {
+    $previous = $current
+    Invoke-Build
+  }
 }
