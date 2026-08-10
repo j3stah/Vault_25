@@ -86,7 +86,7 @@ h1 {
     color: #1aff80;
     text-decoration: none;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', monospace;
     padding: 5px 10px;
     transition: all 0.2s ease-in-out;
     letter-spacing: 1px;
@@ -99,6 +99,14 @@ h1 {
     box-shadow: 0 0 15px #1aff80;
     text-shadow: none;
     transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Active Link State */
+.active-link {
+    background-color: #1aff80;
+    color: #0c0d0c;
+    box-shadow: 0 0 15px #1aff80;
+    text-shadow: none;
 }
 
 /* Mobile Friendly: Stack links if screen is too small */
@@ -149,6 +157,36 @@ header {
     margin-right: auto;
     text-align: center;  /* This centers the actual words inside the box */
     padding: 0 20px;     /* Prevents text from touching the edges on mobile */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    max-width: 900px;
+    margin: 24px auto;
+    padding: 0 20px;
+}
+
+.poem-link {
+    display: block;
+    color: inherit;
+    border: 1px solid #1aff80;
+    background: rgba(26, 255, 128, 0.05);
+    padding: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.poem-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px #1aff80;
+}
+
+.poem-tile {
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .gif-manifest {
@@ -310,62 +348,45 @@ header {
     }
 }
 
+/* ===== JOURNAL PAGE STYLES ===== */
 
-#big-red-button {
-    background-color: #ff0000;
-    color: white;
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    padding: 30px 60px;
-    border: 5px solid #800000;
-    cursor: pointer;
-    box-shadow: 0 0 20px #ff0000;
-    font-size: 2rem;
-    display: block;
-    margin: 20px auto;
-    transition: background-color 0.3s; /* Smooth color change when fixing */
+.journal-list {
+    max-width: 760px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* The Overlay */
-#screen-cracks {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 9999;
-    background-image: url('assets/broken_glass_2.png');
-    background-size: cover;
-    opacity: 0; /* Use opacity instead of display:none for animations */
-    transition: opacity 0.1s;
+.journal-entry {
+    border: 1px solid #1aff80;
+    padding: 18px 20px;
+    background: rgba(26, 255, 128, 0.05);
+    box-shadow: 0 0 10px rgba(26, 255, 128, 0.15);
 }
 
-/* State: Broken */
-.is-broken {
-    opacity: 1 !important;
-    animation: shake 0.15s ease-in-out;
+.journal-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
 }
 
-/* State: Repairing (Flicker) */
-/* Apply this class to the BODY via JS for 0.2s when fixing */
-/* Use !important to make sure it overrides your site's black background */
-/* Update your flicker animation */
-/* Replace your old reboot-flicker class */
-.reboot-flicker {
-    animation: system-surge 0.15s ease-out !important;
+.journal-meta h3 {
+    margin: 0;
+    font-size: 1.1rem;
 }
 
-@keyframes system-surge {
-    0% { 
-        filter: brightness(1); 
-    }
-    50% { 
-        filter: brightness(2.5) contrast(1.2); /* Makes the green text pop without whitening the screen */
-        background-color: rgba(26, 255, 128, 0.05); /* Extremely subtle tint */
-    }
-    100% { 
-        filter: brightness(1); 
-    }
+.journal-date {
+    color: #7fffbf;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.journal-body {
+    white-space: pre-line;
+    line-height: 1.7;
 }
 

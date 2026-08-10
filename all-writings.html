@@ -6,13 +6,6 @@
   <title>Vault 25 - All Writings</title>
   <link rel="icon" type="image/png" href="assets/site_icon.png">
   <link rel="stylesheet" href="style.css">
-  <script>
-    // This waits for your header fetch to finish
-    window.addEventListener('load', function() {
-        const homeButton = document.getElementById('nav-writings');
-        if(homeButton) homeButton.classList.add('active-link');
-    });
-</script>
 </head>
 <body>
   <header>
@@ -23,6 +16,7 @@
   <p class="centered-note"> random yaps from my old notebook and elsewhere </p>
   <main>
       <div class="grid-container">
+          <a href="journal.html" class="poem-link"><div class="poem-tile">Short Journal Entries</div></a>
           <!--<a href="writings/mountain_bikes.html" class="poem-link"><div class="poem-tile">Mountain Bikes</div></a>-->
           <a href="writings/heavenscape.html" class="poem-link"><div class="poem-tile">Heavenscape</div></a>
           <a href="writings/air_hockey.html" class="poem-link"><div class="poem-tile">Air Hockey</div></a>
@@ -33,12 +27,6 @@
           <a href="writings/one_star_boot.html" class="poem-link"><div class="poem-tile">One Star Boot</div></a>
       </div>
   </main>
-  <script>
-    fetch('main_pages_header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
-        });
-  </script>
+  <script src="site-shell.js"></script>
 </body>
 </html>
