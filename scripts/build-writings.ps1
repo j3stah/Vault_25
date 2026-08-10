@@ -116,7 +116,7 @@ function Publish-Changes {
       return $false
     }
 
-    & git add -- writings all-writings.html scripts/build-writings.ps1 scripts/watch-writings.ps1 README.md .vscode/tasks.json
+    & git add -- writings all-writings.html scripts/build-writings.ps1 scripts/watch-writings.ps1 README.md .vscode/tasks.json .github/workflows/pages.yml
     if ($LASTEXITCODE -ne 0) {
       return $false
     }
