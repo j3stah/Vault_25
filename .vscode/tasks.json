@@ -2,7 +2,7 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Watch journal entries",
+			"label": "Watch writings",
 			"type": "shell",
 			"command": "powershell",
 			"args": [
@@ -10,7 +10,7 @@
 				"-ExecutionPolicy",
 				"Bypass",
 				"-File",
-				"scripts/watch-journal.ps1"
+				"scripts/watch-writings.ps1"
 			],
 			"isBackground": true,
 			"group": "build"

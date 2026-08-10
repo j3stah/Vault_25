@@ -1,10 +1,9 @@
 Just a personal website for me to play around and write stuff on. Have fun!
 
-## Journal workflow
+## Writings workflow
 
-- Save a plain text file in `journal_entries/`
-- Use a filename like `2026-08-10--my-entry-title.txt`
-- Run `scripts/build-journal.ps1` to regenerate `data/journal_entries.json`
-- Or run `scripts/watch-journal.ps1` to keep the JSON updated automatically while you edit
+- Save a plain text file in `writings/` (e.g., `my-cool-writing.txt`)
+- Run `scripts/build-writings.ps1` to convert all `.txt` files to formatted `.html` files
+- Or run `scripts/watch-writings.ps1` to automatically convert files as you save them
 
-The site reads from the generated JSON, so GitHub Pages can still serve it as a normal static site.
+The script converts each text file to a properly formatted HTML page and places it in the `writings/` folder. You can then manually add links in `all-writings.html` or the system will auto-generate them.

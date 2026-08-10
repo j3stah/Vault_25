@@ -1,9 +1,9 @@
 param(
-  [string]$SourceDir = (Join-Path $PSScriptRoot '..\journal_entries')
+  [string]$SourceDir = (Join-Path $PSScriptRoot '..\writings')
 )
 
 $ErrorActionPreference = 'Stop'
-$buildScript = Join-Path $PSScriptRoot 'build-journal.ps1'
+$buildScript = Join-Path $PSScriptRoot 'build-writings.ps1'
 
 function Invoke-Build {
   & powershell -NoProfile -ExecutionPolicy Bypass -File $buildScript
@@ -28,7 +28,7 @@ Register-ObjectEvent -InputObject $watcher -EventName Changed -MessageData $buil
 Register-ObjectEvent -InputObject $watcher -EventName Renamed -MessageData $buildScript -Action $action | Out-Null
 Register-ObjectEvent -InputObject $watcher -EventName Deleted -MessageData $buildScript -Action $action | Out-Null
 
-Write-Host "Watching $SourceDir for journal changes. Press Ctrl+C to stop."
+Write-Host "Watching $SourceDir for writing changes. Press Ctrl+C to stop."
 while ($true) {
   Wait-Event -Timeout 1 | Out-Null
 }
