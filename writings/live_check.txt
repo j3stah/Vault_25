@@ -1,3 +1,0 @@
-﻿Watcher validation content.
-
-This should appear on the site if everything is wired correctly.
