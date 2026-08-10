@@ -126,7 +126,7 @@ function Publish-Changes {
       return $false
     }
 
-    & git push origin HEAD:master HEAD:retro-vibe
+    & git push origin HEAD:master HEAD:retro-vibe HEAD:gh-pages
     if ($LASTEXITCODE -ne 0) {
       return $false
     }
