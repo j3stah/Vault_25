@@ -40,7 +40,7 @@
       .then(entries => {
         const container = document.getElementById('journal-list');
         if (!Array.isArray(entries) || entries.length === 0) {
-          container.innerHTML = '<p class="centered-note">No entries yet. Add one to data/journal_entries.json.</p>';
+          container.innerHTML = '<p class="centered-note">No entries yet. Add a .txt file to journal_entries/ and run scripts/build-journal.ps1 or scripts/watch-journal.ps1.</p>';
           return;
         }
 

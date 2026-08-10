@@ -19,7 +19,6 @@
           'media_list.html': 'media',
           'all-writings.html': 'writings',
           'writings_default.html': 'writings',
-          'journal.html': 'journal',
           'bling.html': 'bling',
           'break_the_vault.html': 'breaksite',
           'all-poems.html': 'poems'

@@ -1,36 +1,50 @@
+:root {
+    --bg: #0b0f0d;
+    --panel: rgba(14, 20, 18, 0.92);
+    --panel-border: rgba(122, 255, 181, 0.28);
+    --text: #cde7d8;
+    --muted: #89a89a;
+    --accent: #67f0a0;
+    --accent-strong: #29c96d;
+    --shadow: 0 0 0 1px rgba(103, 240, 160, 0.12), 0 8px 24px rgba(0, 0, 0, 0.38);
+}
+
 body {
     background-color: #0c0d0c;
     background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
                       linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
     background-size: 100% 2px, 3px 100%;
-    color: #1aff80;
+    color: var(--text);
     font-family: 'Courier New', Courier, monospace;
-    text-shadow: 0 0 5px #1aff80;
+    text-shadow: none;
     line-height: 1.5;
     padding: 20px;
 }
 
 /* Make links look like old terminal commands */
 a {
-    color: #1aff80;
+    color: var(--accent);
     text-decoration: none;
-    border: 1px solid #1aff80;
-    padding: 2px 5px;
+    border: 1px solid var(--panel-border);
+    background: rgba(103, 240, 160, 0.03);
+    padding: 3px 8px;
     margin: 5px;
     display: inline-block;
 }
 
 a:hover {
-    background: #1aff80;
-    color: #0c0d0c;
-    box-shadow: 0 0 15px #1aff80;
+    background: rgba(103, 240, 160, 0.14);
+    color: #effff5;
+    box-shadow: var(--shadow);
 }
 
 h1 {
-    border-bottom: 2px solid #1aff80;
+    border-bottom: 1px solid rgba(103, 240, 160, 0.45);
     display: inline-block;
     text-align: center;
     margin: 10px 0; 
+    color: #effff5;
+    letter-spacing: 0.08em;
 }
 
 .content-wrapper h2 {
@@ -48,10 +62,12 @@ h1 {
 .guestbook-note {
     margin-top: 8px;
     text-align: center;
+    color: var(--muted);
 }
 
 .centered-note {
     text-align: center;
+    color: var(--muted);
 }
 
 .welcome-block {
@@ -75,37 +91,38 @@ h1 {
     justify-content: center; /* Centers the menu */
     gap: 15px;               /* Space between buttons */
     padding: 20px 0;
-    border-top: 1px solid #1aff80;
-    border-bottom: 1px solid #1aff80;
+    border-top: 1px solid rgba(103, 240, 160, 0.22);
+    border-bottom: 1px solid rgba(103, 240, 160, 0.22);
     margin: 20px 0;
-    background: rgba(26, 255, 128, 0.05); /* Very faint green tint */
+    background: var(--panel);
+    box-shadow: var(--shadow);
 }
 
 /* Individual Link Styling */
 .nav-item {
-    color: #1aff80;
+    color: var(--accent);
     text-decoration: none;
     font-weight: bold;
     font-family: 'Courier New', monospace;
-    padding: 5px 10px;
+    padding: 6px 10px;
     transition: all 0.2s ease-in-out;
     letter-spacing: 1px;
 }
 
 /* Hover Effect: The "Glow" */
 .nav-item:hover {
-    color: #fff;
-    background-color: #1aff80;
-    box-shadow: 0 0 15px #1aff80;
+    color: #effff5;
+    background-color: rgba(103, 240, 160, 0.16);
+    box-shadow: var(--shadow);
     text-shadow: none;
     transform: translateY(-2px); /* Slight lift effect */
 }
 
 /* Active Link State */
 .active-link {
-    background-color: #1aff80;
-    color: #0c0d0c;
-    box-shadow: 0 0 15px #1aff80;
+    background-color: rgba(103, 240, 160, 0.2);
+    color: #effff5;
+    box-shadow: var(--shadow);
     text-shadow: none;
 }
 
@@ -132,23 +149,23 @@ header {
     display: block;
     width: 100%;
     margin: 20px auto; /* Adds space and centers it */
-    color: #1aff80;
-    text-shadow: 0 0 10px #1aff80; /* Vault glow! */
+    color: #effff5;
+    text-shadow: none;
 }
 
 #boot-btn {
-    background: transparent;
-    color: #1aff80;
-    border: 1px solid #1aff80;
+    background: rgba(103, 240, 160, 0.03);
+    color: var(--accent);
+    border: 1px solid var(--panel-border);
     padding: 10px 20px;
     font-family: 'Courier New', monospace;
     cursor: pointer;
-    box-shadow: 0 0 5px #1aff80;
+    box-shadow: none;
 }
 
 #boot-btn:hover {
-    background: #1aff80;
-    color: #000;
+    background: rgba(103, 240, 160, 0.16);
+    color: #effff5;
 }
 
 .centered-content {
@@ -171,15 +188,15 @@ header {
 .poem-link {
     display: block;
     color: inherit;
-    border: 1px solid #1aff80;
-    background: rgba(26, 255, 128, 0.05);
+    border: 1px solid var(--panel-border);
+    background: var(--panel);
     padding: 14px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .poem-link:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 15px #1aff80;
+    box-shadow: var(--shadow);
 }
 
 .poem-tile {
@@ -270,15 +287,15 @@ header {
 .bling-item {
     break-inside: avoid;
     margin-bottom: 20px;
-    border: 2px solid #1aff80;
+    border: 1px solid var(--panel-border);
     padding: 10px;
-    background: rgba(26, 255, 128, 0.05);
+    background: var(--panel);
     transition: all 0.3s ease;
     max-width: 150px;
 }
 
 .bling-item:hover {
-    box-shadow: 0 0 20px #1aff80;
+    box-shadow: var(--shadow);
     transform: translateY(-5px);
 }
 
@@ -286,7 +303,7 @@ header {
     width: 100%;
     height: auto;
     display: block;
-    border: 1px solid #1aff80;
+    border: 1px solid rgba(103, 240, 160, 0.22);
 }
 
 .bling-caption {
@@ -300,13 +317,13 @@ header {
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
-    border: 2px solid #1aff80;
-    background: rgba(26, 255, 128, 0.03);
+    border: 1px solid rgba(103, 240, 160, 0.22);
+    background: var(--panel);
 }
 
 .bling-featured h2 {
     text-align: center;
-    border-bottom: 2px solid #1aff80;
+    border-bottom: 1px solid rgba(103, 240, 160, 0.28);
     padding-bottom: 10px;
     margin-bottom: 30px;
 }
@@ -321,13 +338,13 @@ header {
 .featured-gif {
     width: 100%;
     height: auto;
-    border: 2px solid #1aff80;
-    box-shadow: 0 0 10px #1aff80;
+    border: 1px solid rgba(103, 240, 160, 0.22);
+    box-shadow: none;
     transition: all 0.3s ease;
 }
 
 .featured-gif:hover {
-    box-shadow: 0 0 25px #1aff80;
+    box-shadow: var(--shadow);
     transform: scale(1.05);
 }
 
@@ -359,10 +376,10 @@ header {
 }
 
 .journal-entry {
-    border: 1px solid #1aff80;
+    border: 1px solid var(--panel-border);
     padding: 18px 20px;
-    background: rgba(26, 255, 128, 0.05);
-    box-shadow: 0 0 10px rgba(26, 255, 128, 0.15);
+    background: var(--panel);
+    box-shadow: var(--shadow);
 }
 
 .journal-meta {
@@ -380,13 +397,14 @@ header {
 }
 
 .journal-date {
-    color: #7fffbf;
+    color: var(--muted);
     font-size: 0.9rem;
     text-transform: uppercase;
 }
 
 .journal-body {
     white-space: pre-line;
-    line-height: 1.7;
+    line-height: 1.75;
+    color: var(--text);
 }
 

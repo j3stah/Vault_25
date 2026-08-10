@@ -1,12 +1,12 @@
 [
-  {
-    "title": "August Static",
-    "date": "2026-08-09",
-    "body": "The room felt warmer than it should have.\n\nI kept thinking about how a simple day can feel like an old cassette tape left in the sun: warped, familiar, and a little bit haunted."
-  },
-  {
-    "title": "Night Notes",
-    "date": "2026-08-07",
-    "body": "I wrote this while the apartment was half-asleep.\n\nThe city outside sounded like a machine trying to remember itself."
-  }
+    {
+        "title":  "August Static",
+        "date":  "2026-08-09",
+        "body":  "The room felt warmer than it should have.\r\n\r\nI kept thinking about how a simple day can feel like an old cassette tape left in the sun: warped, familiar, and a little bit haunted."
+    },
+    {
+        "title":  "Night Notes",
+        "date":  "2026-08-07",
+        "body":  "I wrote this while the apartment was half-asleep.\r\n\r\nThe city outside sounded like a machine trying to remember itself."
+    }
 ]
