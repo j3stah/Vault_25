@@ -16,6 +16,47 @@ function Convert-ToTitleCase {
   return [System.Globalization.CultureInfo]::CurrentCulture.TextInfo.ToTitleCase($text.ToLower())
 }
 
+function Get-WritingLinkHtml {
+  param([System.IO.FileInfo]$File)
+
+  $baseName = [System.IO.Path]::GetFileNameWithoutExtension($File.Name)
+  $title = Convert-ToTitleCase $baseName
+
+  return ('          <a href="writings/{0}" class="poem-link"><div class="poem-tile">{1}</div></a>' -f $File.Name, $title)
+}
+
+function Update-AllWritingsPage {
+  param([string]$PagePath, [string]$SourceDir)
+
+  if (-not (Test-Path $PagePath)) {
+    return
+  }
+
+  $links = Get-ChildItem -Path $SourceDir -Filter '*.html' -File |
+    Sort-Object Name |
+    ForEach-Object { Get-WritingLinkHtml $_ }
+
+  $content = Get-Content -Path $PagePath -Raw -Encoding UTF8
+  $replacement = @"
+          <!-- WRITINGS:START -->
+$($links -join "`r`n")
+          <!-- WRITINGS:END -->
+"@
+
+  if ($content -match '(?s)<!-- WRITINGS:START -->.*<!-- WRITINGS:END -->') {
+    $content = [System.Text.RegularExpressions.Regex]::Replace(
+      $content,
+      '(?s)<!-- WRITINGS:START -->.*<!-- WRITINGS:END -->',
+      [System.Text.RegularExpressions.MatchEvaluator]{ param($match) $replacement }
+    )
+  }
+  else {
+    $content = $content -replace '(?s)(<div class="grid-container">\s*)', "`$1$replacement`r`n"
+  }
+
+  [System.IO.File]::WriteAllText($PagePath, $content, [System.Text.UTF8Encoding]::new($false))
+}
+
 function Convert-TextToHtml {
   param(
     [string]$TextFile,
@@ -75,7 +116,7 @@ function Publish-Changes {
       return $false
     }
 
-    & git add -- writings all-writings.html
+    & git add -- writings all-writings.html scripts/build-writings.ps1 scripts/watch-writings.ps1 README.md .vscode/tasks.json
     if ($LASTEXITCODE -ne 0) {
       return $false
     }
@@ -85,7 +126,7 @@ function Publish-Changes {
       return $false
     }
 
-    & git push origin HEAD
+    & git push origin HEAD:master
     if ($LASTEXITCODE -ne 0) {
       return $false
     }
@@ -111,6 +152,9 @@ foreach ($file in $textFiles) {
   Convert-TextToHtml -TextFile $file.FullName -OutputPath $htmlOutput -Title $title
   Write-Host "Converted: $($file.Name) -> $baseName.html"
 }
+
+$allWritingsPage = Join-Path (Split-Path -Parent $PSScriptRoot) 'all-writings.html'
+Update-AllWritingsPage -PagePath $allWritingsPage -SourceDir $SourceDir
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $published = Publish-Changes -RepoRoot $repoRoot
