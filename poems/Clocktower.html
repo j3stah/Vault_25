@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Clocktower</title>
+<link rel="icon" type="image/png" href="../assets/site_icon.png">
+<link href="../style.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="header"></div>
+<h2>Clocktower</h2>
+      Grinning stood the clock tower <br>
+      It's glassy scales alight <br>
+      Encrusted with it's shopfronts <br>
+      All glowing through the night <br>
+      But faint halls in its underbelly <br>
+      Only trod through obscure stairs <br>
+      Blank and wrongly quiet <br>
+      Signs of life yet humans scarce</p>
+
+<script>
+  fetch('../poem_header.html')
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById('header').innerHTML = data;
+      });
+</script>
+</body>
+</html>

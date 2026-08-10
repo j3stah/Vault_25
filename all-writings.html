@@ -4,14 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vault 25 - All Writings</title>
+  <link rel="icon" type="image/png" href="assets/site_icon.png">
   <link rel="stylesheet" href="style.css">
+  <script>
+    // This waits for your header fetch to finish
+    window.addEventListener('load', function() {
+        const homeButton = document.getElementById('nav-writings');
+        if(homeButton) homeButton.classList.add('active-link');
+    });
+</script>
 </head>
 <body>
+  <header>
+    <marquee scrollamount="10"> >>>ACCESS GRANTED TO VAULT 25.....//WELCOME TO THE BUNKER//.........//ALL SYSTEMS ONLINE//.....<<<</marquee>
+  </header>
+
   <div id="header"></div>
+  <p class="centered-note"> random yaps from my old notebook and elsewhere </p>
   <main>
       <div class="grid-container">
-        
+          <!--<a href="writings/mountain_bikes.html" class="poem-link"><div class="poem-tile">Mountain Bikes</div></a>-->
+          <a href="writings/heavenscape.html" class="poem-link"><div class="poem-tile">Heavenscape</div></a>
+          <a href="writings/air_hockey.html" class="poem-link"><div class="poem-tile">Air Hockey</div></a>
+          <!--<a href="writings/nineties_shows.html" class="poem-link"><div class="poem-tile">90's Animes</div></a> -->
+          <a href="writings/death_islands.html" class="poem-link"><div class="poem-tile">Death Islands</div></a>
           <!-- <a href="writings/Writing Title.html" class="poem-link"><div class="poem-tile">Writing Title</div></a> -->
+          <a href="writings/electric_land.html" class="poem-link"><div class="poem-tile">Electric Land</div></a>
+          <a href="writings/one_star_boot.html" class="poem-link"><div class="poem-tile">One Star Boot</div></a>
       </div>
   </main>
   <script>
@@ -21,8 +40,5 @@
             document.getElementById('header').innerHTML = data;
         });
   </script>
-  <footer>
-    &copy; Hamza Siddeek 2026
-  </footer>
 </body>
 </html>

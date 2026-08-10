@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Break The Vault</title>
+<link rel="icon" type="image/png" href="assets/site_icon.png">
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+  <marquee scrollamount="10"> >>>ACCESS GRANTED TO VAULT 25.....//WELCOME TO THE BUNKER//.........//ALL SYSTEMS ONLINE//.....<<<</marquee>
+</header>
+
+<div id="header"></div>
+
+<div class="emergency-zone">
+    <button id="big-red-button">DO NOT PRESS</button>
+</div>
+
+<div id="screen-cracks" class="hidden"></div>
+
+<script>
+  fetch('main_pages_header.html')
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById('header').innerHTML = data;
+      });
+</script>
+
+<script>
+    const btn = document.getElementById('big-red-button');
+    const cracks = document.getElementById('screen-cracks');
+    const breakSound = document.getElementById('break-sfx');
+    const fixSound = document.getElementById('fix-sfx');
+
+    btn.addEventListener('click', function() {
+        if (!cracks.classList.contains('is-broken')) {
+            console.log("State: Breaking");
+            cracks.classList.add('is-broken');
+            
+            // Text and Style
+            btn.textContent = "REPAIR SYSTEM"; // Using textContent is more reliable
+            btn.style.backgroundColor = "#550000";
+            
+            // Sound
+            breakSound.currentTime = 0;
+            breakSound.play().catch(e => console.log("Sound blocked"));
+            
+        } else {
+            console.log("State: Fixing");
+            cracks.classList.remove('is-broken');
+            
+            // Text and Style
+            btn.textContent = "DO NOT PRESS";
+            btn.style.backgroundColor = "#ff0000";
+
+            // Trigger Flicker on the WHOLE page
+            document.body.classList.add('reboot-flicker');
+            setTimeout(() => {
+                document.body.classList.remove('reboot-flicker');
+            }, 200);
+
+            // Sound
+            fixSound.currentTime = 0;
+            fixSound.play().catch(e => console.log("Sound blocked"));
+        }
+    });
+</script>
+
+</body>
+</html>
